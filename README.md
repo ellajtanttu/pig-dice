@@ -136,7 +136,7 @@ function Player(roll, turn, turnScore, totalScore) {
   this.turn = turn;
 }
 
-1. PLAYER OBJECT CONSTRUCTOR
+X 1. PLAYER OBJECT CONSTRUCTOR
 X 2. ROLL METHOD - tiggered by: roll button pushed
  - run roll method
  - number is returned
@@ -185,11 +185,21 @@ Test: "It should create a new instance of a Player object"
 Code: let testPlayer = new Player(5, 0, 0, true);
 Expected Result: testPlayer = Player { roll: 5, turnScore: 0, totalScoreNumber: 0, turn: true }
 
+
 Describe: rollDice()
 
 Test: "It should return a random number between 1-6"
 Code: rollDice();
 Expected Result: 5 (or other random number between 1-6)
+
+
+Describe: Object.prototype.setDefaults()
+
+Test: "It should return default Player object"
+Code:
+let testPlayer = new Player(5, 5, 8, false);
+testPlayer.setDefaults();
+Expected Result: testPlayer = Player { roll: 0, turnScore: 0, totalScoreNumber: 0, turn: false}
 
 
 Describe: Object.prototype.turnChange()
