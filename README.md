@@ -202,6 +202,27 @@ testPlayer.setDefaults();
 Expected Result: testPlayer = Player { roll: 0, turnScore: 0, totalScoreNumber: 0, turn: false}
 
 
+Describe: Object.prototype.currentScore()
+
+Test: "It should add dice value to Player.turnScore"
+Code:
+console.log(testPlayer.currentScore());
+Expected Result: Player.turnScore = (5)
+
+Test: "If dice value is 1 Player.turnScore should equal 0"
+Code:
+console.log(testPlayer.currentScore());
+Expected Result: Player.turnScore = (0)
+
+Test: "It should add second dice value to Player.turnScore"
+Code:
+let roll = console.log(testPlayer.currentScore());
+Expected Result: Player.turnScore = (10)
+
+
+---------LEFT OFF: TEST 
+
+
 Describe: Object.prototype.turnChange()
 
 Test: "It should return false if this.roll === 1"

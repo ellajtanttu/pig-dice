@@ -1,10 +1,10 @@
 // Business Logic
 
 
-function Player(roll, turn, turnScore, totalScore) {
+function Player(roll, turnScore, totalScore, turn) {
   this.roll = roll;
   this.turnScore = turnScore;
-  this.totalScoreNumber = totalScore;
+  this.totalScore = totalScore;
   this.turn = turn;
 }
 
@@ -17,6 +17,21 @@ Player.prototype.setDefaults = function(){
   this.turnScore = 0;
   this.totalScoreNumber = 0;
   this.turn = false;
+}
+
+Player.prototype.currentScore = function (){
+  let roll = rollDice();
+  console.log("roll number is " + roll)
+  if ( roll > 1 ) {
+    return this.turnScore += roll;
+  } else {
+    return this.turnScore = 0;
+  }
+}
+
+Player.prototype.grandTotal = function() {
+  this.totalScore += this.turnScore;
+  return this.totalScore;
 }
 
 Player.prototype.turnChange = function (){
