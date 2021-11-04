@@ -1,45 +1,53 @@
 // Business Logic
 
-
+t
 function Player(roll, turnScore, totalScore, turn) {
   this.roll = roll;
   this.turnScore = turnScore;
   this.totalScore = totalScore;
-  this.turn = turn;
 }
 
+// function rollDice() {
+//   return Math.ceil(Math.random() * 6);
+// }
 
-
-function rollDice() {
-  return Math.ceil(Math.random() * 6);
-}
-
+// new game button "Let's play again!"
 // Player.prototype.setDefaults = function(){
 //   this.roll = 0;
 //   this.turnScore = 0;
 //   this.totalScore = 0;
-//   this.turn = false;
 // }
 
-Player.prototype.currentScore = function (){
-  this.roll = rollDice();
+Player.prototype.rollDice = function (){
+  this.roll = Math.ceil(Math.random() * 6);
   if ( this.roll > 1 ) {
-    return this.turnScore += this.roll;
+    turnScore += this.roll;
+    this.totalScore += this.turnScore;
+    if (this.totalScore >= 100) {
+      this.winner();
+    }
   } else {
-    return this.turnScore = 0;
+    this.turnScore = 0;
+    toggle();
   }
 }
 
-Player.prototype.grandTotal = function() {
+Player.prototype.clickHold = function() {
   this.totalScore += this.turnScore;
-  return this.totalScore;
+  this.turnscore = 0;
+  toggle();
 }
+
+Player.prototype.winner = function() {
+  $("#gameboard").hide();
+  $("#winner").show();
+}
+
 
 // -----------
 
 Player.prototype.resetAndChange = function() {
   this.turnScore = 0;
-  this.turn = false;
 }
 
 // Next steps:
@@ -47,20 +55,17 @@ Player.prototype.resetAndChange = function() {
 
 
 Player.prototype.turnChange = function() {
-  if ((this.turn === true) && (this.totalScore < 100)) {
+  if (this.totalScore < 100) {
     if (this.roll ===  1) {
       return this.resetAndChange();
     // } else if (holdVariable === true ){
     //   this.totalScore.grandTotal();
     //   this.resetAndChange();
-    } else {
-      return this.turn = true;
     }
   }
 }
 
-if ((this.turn === true) && (this.turnscore + this.totalScore >= 100))
-  this.turn = false;
+if (this.turnscore + this.totalScore >= 100)
   this.totalScore.grandTotal();
   return this.win = true;
 
