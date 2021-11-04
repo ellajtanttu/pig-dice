@@ -30,6 +30,7 @@ Player.prototype.currentScore = function (){
   }
 }
 
+
 Player.prototype.grandTotal = function() {
   this.totalScore += this.turnScore;
   return this.totalScore;
