@@ -220,7 +220,7 @@ let roll = console.log(testPlayer.currentScore());
 Expected Result: Player.turnScore = (10)
 
 
----------LEFT OFF: TEST 
+---------LEFT OFF: TEST GRAND TOTAL METHOD
 
 
 Describe: Object.prototype.turnChange()
