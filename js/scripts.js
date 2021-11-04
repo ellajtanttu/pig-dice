@@ -15,13 +15,12 @@ function rollDice() {
 Player.prototype.setDefaults = function(){
   this.roll = 0;
   this.turnScore = 0;
-  this.totalScoreNumber = 0;
+  this.totalScore = 0;
   this.turn = false;
 }
 
 Player.prototype.currentScore = function (){
   let roll = rollDice();
-  console.log("roll number is " + roll)
   if ( roll > 1 ) {
     return this.turnScore += roll;
   } else {
@@ -34,11 +33,19 @@ Player.prototype.grandTotal = function() {
   return this.totalScore;
 }
 
+// Next steps:
+// 1. round out what the turnchange method will Be
+// 2. round out turnchange method
+
 Player.prototype.turnChange = function (){
   if (this.roll ===  1) {
+    this.turnScore = 0;
     this.turnChange = false ;
   } else if (holdVariable === true ){
-    totalScoreNumber += turnScore;
+      this.totalScore.grandTotal();
+      this.turnScore = 0;
+      this.turnChange = false ;
+    // totalScoreNumber += turnScore;
     this.turnChange = false;
   } else {
     this.turnChange = true;

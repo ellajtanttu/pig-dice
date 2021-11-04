@@ -104,7 +104,7 @@ Object Player
 <!-- - this.turnChange = turn; -->
 
 
-if player.turn === true 
+if player.turn === true
   then add score to that player object
 
 
@@ -220,7 +220,13 @@ let roll = console.log(testPlayer.currentScore());
 Expected Result: Player.turnScore = (10)
 
 
----------LEFT OFF: TEST GRAND TOTAL METHOD
+Describe: Object.prototype.grandTotal()
+-adding the value to total score
+
+Test: "It should set totalScore to = turnScore"
+Code:
+testPlayer.grandTotal();
+Expected Result: testPlayer.totalScore = 32
 
 
 Describe: Object.prototype.turnChange()
