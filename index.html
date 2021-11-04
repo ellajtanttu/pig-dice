@@ -1,13 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.6.0.js"></script>
   <script src="js/scripts.js"></script>
-  <title>PLACEHOLDER</title>
+  <title>Pig Dice game</title>
 </head>
+
 <body>
-  
+  <div class="container">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded" id="softShadow">
+      <div class="introSection">
+        <h1>Pig Dice! </h1>
+        <div class="rules">
+          <h4>Rules:</h4>
+          <p>Begin by creating a player profile for each player in the forms below. </p>
+          <p>On a turn, a player rolls the die repeatedly. The goal is to accumulate as many points as possible, adding
+            up
+            the numbers rolled on the die. However, if a player rolls a 1, the player's turn is over and any points they
+            have accumulated during this turn are forfeited. Rolling a 1 doesn't wipe out your entire score from
+            previous
+            turns, just the total earned during that particular turn.</p>
+          <p>A player can also choose to hold (stop rolling the die) if they do not want to take a chance of rolling a 1
+            and losing all of their points from this turn. If the
+            player chooses to hold, all of the points rolled during that turn are added to his or her score.</p>
+          <p></p>When a player reaches a total of 100 or more points, the game ends and that player is the winner.</p>
+          <button type="reset" class="btn btn-success" onclick="window.location.reload(false)">Click here to start a new game</button>
+        </div>
+      </div>
+      <div class="playername">
+        <div class="row">
+
+          <div class="col-md-6">
+            <form id="player1Form">
+              <div class="form-group">
+                <label for="p1Name">
+                  <h3>Player 1</h3>
+                </label>
+                <input type="text" class="form-control" id="p1Name" placeholder="First Name">
+              </div>
+              <button type="Submit" class="btn btn-primary">Create Player 1 Profile</button>
+            </form>
+          </div>
+
+          <div class="col-md-6">
+            <form id="player2Form">
+              <div class="form-group">
+                <label for="p2Name">
+                  <h3>Player 2</h3>
+                </label>
+                <input type="text" class="form-control" id="p2Name" placeholder="First Name">
+              </div>
+              <button type="Submit" class="btn btn-danger">Create Player 2 Profile</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      <div class="gameboard">
+        <div class="row">
+          <div class="col-md" id="player1">
+            <h2>Player1</h2>
+            <button id="player1roll" class="btn btn-primary">Roll</button>
+            <button id="player1hold" class="btn btn-primary">Hold</button>
+            <h6>Player1 Round Score: <span id="player1roundscore"></span></h6>
+            <h6>Player1 Total Score: <span id="player1totalscore"></span></h6>
+          </div>
+          <div class="col-md" id="currentRoll">
+            <h4>Roll: <span id="currentroll"></span></h4>
+          </div>
+        <div class="col-md" id="player2">
+          <h2>Player2</h2>
+          <button id="player2roll" class="btn btn-danger">Roll</button>
+          <button id="player2hold" class="btn btn-danger">Hold</button>
+          <h6>Player2 Round Score: <span id="player2roundscore"></span></h6>
+          <h6>Player2 Total Score: <span id="player2totalscore"></span></h6>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="winnerplayer1">
+      <h2>Congrats! <span id="namewinner"></span> Player1 wins the game!!</h2>
+      <img src="https://thumbs.gfycat.com/ElatedImpartialArmadillo-max-1mb.gif">
+    </div>
+    <div class="winnerplayer2">
+      <h2>Congrats! <span id="namewinner"></span> Player2 wins the game!!</h2>
+      <img src="https://thumbs.gfycat.com/ElatedImpartialArmadillo-max-1mb.gif">
+    </div>
+  </div>
+  </div>
+  </div>
 </body>
+
 </html>

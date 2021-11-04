@@ -1,17 +1,12 @@
 // Business Logic
 
-t
-function Player(roll, turnScore, totalScore, turn) {
+function Player(roll, turnScore, totalScore) {
   this.roll = roll;
   this.turnScore = turnScore;
   this.totalScore = totalScore;
 }
 
-// function rollDice() {
-//   return Math.ceil(Math.random() * 6);
-// }
-
-// new game button "Let's play again!"
+// new game button "Let's play again!" ***needs $("#gameboard").show***
 // Player.prototype.setDefaults = function(){
 //   this.roll = 0;
 //   this.turnScore = 0;
@@ -19,12 +14,31 @@ function Player(roll, turnScore, totalScore, turn) {
 // }
 
 Player.prototype.rollDice = function (){
-  this.roll = Math.ceil(Math.random() * 6);
+  rollNumber = Math.ceil(Math.random() * 6);
+  console.log("rollNumber " + rollNumber);
+  this.roll = rollNumber;
+  console.log("this.roll is " + this.roll);
   if ( this.roll > 1 ) {
-    turnScore += this.roll;
-    this.totalScore += this.turnScore;
-    if (this.totalScore >= 100) {
+    this.turnScore += this.roll;
+    if (this.totalScore + this.turnScore >= 100) {
       this.winner();
+    }
+  } else {
+    this.turnScore = 0;
+    toggle();
+  }
+}
+
+Player.prototype.rollDice = function (){
+  rollNumber = Math.ceil(Math.random() * 6);
+  console.log("rollNumber " + rollNumber);
+  this.roll = rollNumber;
+  console.log("this.roll is " + this.roll);
+  if ( this.roll > 1 ) {
+    if (this.totalScore + this.turnScore + this.roll >= 100) {
+      return this.winner();
+    } else {
+      return this.turnScore += this.roll;
     }
   } else {
     this.turnScore = 0;
@@ -44,42 +58,14 @@ Player.prototype.winner = function() {
 }
 
 
-// -----------
+// User Interface Logic:
 
-Player.prototype.resetAndChange = function() {
-  this.turnScore = 0;
+function toggle () {
+  $("")
 }
 
-// Next steps:
-// 1. round out what the turnchange method will Be
+$(document).ready(function() {
+  $("#").submit(function(event) {
 
-
-Player.prototype.turnChange = function() {
-  if (this.totalScore < 100) {
-    if (this.roll ===  1) {
-      return this.resetAndChange();
-    // } else if (holdVariable === true ){
-    //   this.totalScore.grandTotal();
-    //   this.resetAndChange();
-    }
-  }
-}
-
-if (this.turnscore + this.totalScore >= 100)
-  this.totalScore.grandTotal();
-  return this.win = true;
-
-
-
-
-let player1 = true;
-let player2 = false;
-
-// User Interface Logic
-
-// testPlayer1.turnChange() - false
-// testPlayer2.turnChange() - true
-
-// two forms to individually create a player Object
-
-// one form,
+  });
+});
