@@ -8,21 +8,23 @@ function Player(roll, turnScore, totalScore, turn) {
   this.turn = turn;
 }
 
+
+
 function rollDice() {
   return Math.ceil(Math.random() * 6);
 }
 
-Player.prototype.setDefaults = function(){
-  this.roll = 0;
-  this.turnScore = 0;
-  this.totalScore = 0;
-  this.turn = false;
-}
+// Player.prototype.setDefaults = function(){
+//   this.roll = 0;
+//   this.turnScore = 0;
+//   this.totalScore = 0;
+//   this.turn = false;
+// }
 
 Player.prototype.currentScore = function (){
-  let roll = rollDice();
-  if ( roll > 1 ) {
-    return this.turnScore += roll;
+  this.roll = rollDice();
+  if ( this.roll > 1 ) {
+    return this.turnScore += this.roll;
   } else {
     return this.turnScore = 0;
   }
@@ -33,27 +35,46 @@ Player.prototype.grandTotal = function() {
   return this.totalScore;
 }
 
+// -----------
+
+Player.prototype.resetAndChange = function() {
+  this.turnScore = 0;
+  this.turn = false;
+}
+
 // Next steps:
 // 1. round out what the turnchange method will Be
-// 2. round out turnchange method
 
-Player.prototype.turnChange = function (){
-  if (this.roll ===  1) {
-    this.turnScore = 0;
-    this.turnChange = false ;
-  } else if (holdVariable === true ){
-      this.totalScore.grandTotal();
-      this.turnScore = 0;
-      this.turnChange = false ;
-    // totalScoreNumber += turnScore;
-    this.turnChange = false;
-  } else {
-    this.turnChange = true;
+
+Player.prototype.turnChange = function() {
+  if ((this.turn === true) && (this.totalScore < 100)) {
+    if (this.roll ===  1) {
+      return this.resetAndChange();
+    // } else if (holdVariable === true ){
+    //   this.totalScore.grandTotal();
+    //   this.resetAndChange();
+    } else {
+      return this.turn = true;
+    }
   }
 }
 
+if ((this.turn === true) && (this.turnscore + this.totalScore >= 100))
+  this.turn = false;
+  this.totalScore.grandTotal();
+  return this.win = true;
 
 
 
+
+let player1 = true;
+let player2 = false;
 
 // User Interface Logic
+
+// testPlayer1.turnChange() - false
+// testPlayer2.turnChange() - true
+
+// two forms to individually create a player Object
+
+// one form,

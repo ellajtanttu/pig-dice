@@ -237,9 +237,11 @@ const rollValue = 1;
 Player.turnChange(rollValue)
 Expected Result: False
 
-Test:
+Test: "It should return true if this.roll !== 1"
 Code:
-Expected Result:
+const rollValue = 2
+Player.turnChange(rollValue)
+Expected Result: True
 
 Test:
 Code:
