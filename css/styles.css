@@ -7,6 +7,7 @@
   margin: auto;
   margin-top: 5%;
   color: rgb(0, 0, 0);
+  display: none;
 }
 
 #player1 {
@@ -19,15 +20,19 @@
 
 }
 
+.btn btn-danger {
+  margin: auto;
+}
 
 .winnerplayer1 {
-  /* display: none; */
+  display: none;
   text-align: center;
   font-size: 30px;
   color: blue;
   box-shadow: 0px 1px 15px blue;
   padding: 10px;
   margin: 15px;
+
 }
 
 .winnerplayer1 img {
@@ -36,7 +41,7 @@
 }
 
 .winnerplayer2 {
-  /* display: none; */
+  display: none;
   text-align: center;
   font-size: 30px;
   color: red;
@@ -56,7 +61,7 @@
 
 }
 
-#currentRoll {
+#displayRoll {
   text-align: center;
 }
 
@@ -67,3 +72,16 @@
 #player2Form {
   text-align: right;
 }
+
+/* #player2roll {
+  display: none;
+}
+
+#player2hold {
+  display: none;
+} */
+
+.playerForm {
+  width: 100%
+}
+

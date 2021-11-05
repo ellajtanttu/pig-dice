@@ -27,37 +27,36 @@
             and losing all of their points from this turn. If the
             player chooses to hold, all of the points rolled during that turn are added to his or her score.</p>
           <p></p>When a player reaches a total of 100 or more points, the game ends and that player is the winner.</p>
-          <button type="reset" class="btn btn-success" onclick="window.location.reload(false)">Click here to start a new game</button>
+          <button type="reset" class="btn btn-success" onclick="window.location.reload(false)">Click here to start a new
+            game</button>
         </div>
       </div>
-      <div class="playername">
-        <div class="row">
+      <div class="formSection">
+          <form id="playerForm">
+            <div class="row">
+            <div class="col-md-6">
 
-          <div class="col-md-6">
-            <form id="player1Form">
               <div class="form-group">
                 <label for="p1Name">
                   <h3>Player 1</h3>
                 </label>
                 <input type="text" class="form-control" id="p1Name" placeholder="First Name">
               </div>
-              <button type="Submit" class="btn btn-primary">Create Player 1 Profile</button>
-            </form>
-          </div>
+            </div>
 
-          <div class="col-md-6">
-            <form id="player2Form">
+            <div class="col-md-6">
               <div class="form-group">
                 <label for="p2Name">
                   <h3>Player 2</h3>
                 </label>
                 <input type="text" class="form-control" id="p2Name" placeholder="First Name">
               </div>
-              <button type="Submit" class="btn btn-danger">Create Player 2 Profile</button>
-            </form>
-          </div>
 
-        </div>
+            </div>
+
+            <button type="submit" class="btn btn-danger btn-block" id="createPlayers">Create Player Profiles</button>
+          </div>
+          </form>
       </div>
       <div class="gameboard">
         <div class="row">
@@ -68,16 +67,16 @@
             <h6>Player1 Round Score: <span id="player1roundscore"></span></h6>
             <h6>Player1 Total Score: <span id="player1totalscore"></span></h6>
           </div>
-          <div class="col-md" id="currentRoll">
-            <h4>Roll: <span id="currentroll"></span></h4>
+          <div class="col-md" id="displayRoll">
+            <h4>Roll</h4></br> <h2><span id="currentroll"></span></h2>
           </div>
-        <div class="col-md" id="player2">
-          <h2>Player2</h2>
-          <button id="player2roll" class="btn btn-danger">Roll</button>
-          <button id="player2hold" class="btn btn-danger">Hold</button>
-          <h6>Player2 Round Score: <span id="player2roundscore"></span></h6>
-          <h6>Player2 Total Score: <span id="player2totalscore"></span></h6>
-        </div>
+          <div class="col-md" id="player2">
+            <h2>Player2</h2>
+            <button id="player2roll" class="btn btn-danger">Roll</button>
+            <button id="player2hold" class="btn btn-danger">Hold</button>
+            <h6>Player2 Round Score: <span id="player2roundscore"></span></h6>
+            <h6>Player2 Total Score: <span id="player2totalscore"></span></h6>
+          </div>
         </div>
       </div>
     </div>
